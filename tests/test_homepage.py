@@ -1,8 +1,4 @@
-import time
-
 import allure
-from selenium.webdriver.common.by import By
-
 from Src.pages.HomePage import HomePage
 from Src.pages.Login import Login
 
@@ -200,17 +196,94 @@ def test_10_Navigate_to_woman_with_smoothie(test_setup):
         driver.save_screenshot("test_TS11_error.png")
         raise e
 
+@allure.description("Check text element in paragraph")
+@allure.severity(severity_level="LOW")
+@allure.title("Test case ID: TS12")
+def test_11_Common_question_description_text(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        assert hp.assert_Common_question_description_text()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS12_error.png")
+        raise e
+
+@allure.description("navigate to all questions in homepage")
+@allure.severity(severity_level="NORMAL")
+@allure.title("Test case ID: TS13")
+def test_12_navigate_to_all_questions(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        hp.navigate_to_all_questions()
+        assert hp.assert_to_all_questions()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS13_error.png")
+        raise e
+
+@allure.description("Check contact us element xpath")
+@allure.severity(severity_level="LOW")
+@allure.title("Test case ID: TS14")
+def test_13_Contact_description_text(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        assert hp.assert_Contact_description_text()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS14_error.png")
+        raise e
+
+@allure.description("navigate to contact us")
+@allure.severity(severity_level="NORMAL")
+@allure.title("Test case ID: TS15")
+def test_14_Navigate_to_contact_us(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        hp.Navigate_to_contact_us()
+        assert hp.assert_contact_us_page()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS15_error.png")
+        raise e
+
+@allure.description("How shipment works description text")
+@allure.severity(severity_level="LOW")
+@allure.title("Test case ID: TS16")
+def test_15_How_shipment_works_description_text(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        assert hp.assert_How_shipment_works_description_text()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS16_error.png")
+        raise e
+
+@allure.description("How shipment works description text")
+@allure.severity(severity_level="NORMAL")
+@allure.title("Test case ID: TS17")
+def test_16_Navigate_to_more_details(test_setup):
+    try:
+        driver = test_setup
+        hp = HomePage(driver)
+        hp.click_save_button()
+        hp.Navigate_to_more_details()
+        assert hp.assert_Navigate_to_more_details()
+    except Exception as e:
+        print(e)
+        driver.save_screenshot("test_TS17_error.png")
+        raise e
 
 
-
-
-
-def test_11_navigate_to_all_questions_contact_us_more_details(test_setup):
-    driver = test_setup
-    hp = HomePage(driver)
-    hp.click_save_button()
-    hp.navigate_to_all_questions_contact_us_more_details()
-    assert driver.current_url == 'https://qa.trado.co.il/questions'
 
 
 

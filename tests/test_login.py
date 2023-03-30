@@ -1,5 +1,4 @@
 import allure
-
 from Src.pages.HomePage import HomePage
 from Src.pages.Login import Login
 from selenium.webdriver.common.by import By
@@ -8,7 +7,7 @@ from selenium.webdriver.support import expected_conditions as EC
 
 
 # login to user
-@allure.description("sanity check if a user can login")
+@allure.description("check if a user can login")
 @allure.severity(severity_level="CRITICAL")
 @allure.title("Test case ID: TS19")
 def test_1_valid_login(test_setup):
@@ -34,7 +33,7 @@ def test_1_valid_login(test_setup):
         raise e
 
 # negative login test
-@allure.description("to check if a user can register with invalid credantials")
+@allure.description("to check if a user can login with invalid credantials")
 @allure.severity(severity_level="NORMAL")
 @allure.title("Test case ID: TS20")
 def test_2_invalid_login(test_setup):
@@ -52,4 +51,5 @@ def test_2_invalid_login(test_setup):
     except Exception as e:
         print(e)
         driver.save_screenshot("test_TS20_error.png")
+        raise e
 

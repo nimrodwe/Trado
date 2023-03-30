@@ -10,7 +10,7 @@ class HomePage(CommonOps):
 
     def click_save_button(self):
         welcome_save_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/button'
-        click_save_button = self.wait_for((By.XPATH, welcome_save_button_xpath)).click()
+        self.wait_for((By.XPATH, welcome_save_button_xpath)).click()
 
     # click the left arrow on the commercial container
     def click_left_arrow(self):
@@ -122,16 +122,39 @@ class HomePage(CommonOps):
         self.driver.execute_script("arguments[0].click();", element)
         self.driver.switch_to.window(self.driver.window_handles[1])
 
-    def navigate_to_all_questions_contact_us_more_details(self):
-        all_questions_button = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[2]/div/a'
-        return self.wait_for((By.XPATH, all_questions_button)).click()
+    def navigate_to_all_questions(self):
+        all_questions_button = '/html/body/div[1]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[3]/div/a'
+        self.wait_for((By.XPATH, all_questions_button)).click()
 
-    def get_list_elements(self):
-        container_elements = self.driver.find_element(By.CSS_SELECTOR,
-                                                      "#root > div > div.pages_pages > div.pages_children.false > div > div > div.store_productsList > div > div.productsList_productListWrapper > div.productsList_list")
-        product_element = container_elements.find_elements(By.CSS_SELECTOR,
-                                                           "#root > div > div.pages_pages > div.pages_children.false > div > div > div.store_productsList > div > div.productsList_productListWrapper > div.productsList_list > a:nth-child(1)")
+    def assert_to_all_questions(self):
+        page_image_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div[1]/div/img[1]'
+        return self.wait_for((By.XPATH, page_image_xpath))
 
-        elem = []
-        for prod in product_element:
-            elem.append(prod)
+    def assert_Common_question_description_text(self):
+        text_element_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[3]/li[1]'
+        return self.wait_for((By.XPATH, text_element_xpath))
+
+    def assert_Contact_description_text(self):
+        contact_text_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[4]/li[1]'
+        return self.wait_for((By.XPATH, contact_text_xpath))
+
+    def Navigate_to_contact_us(self):
+        contact_us_button_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[4]/div/a'
+        self.wait_for((By.XPATH, contact_us_button_xpath)).click()
+
+    def assert_contact_us_page(self):
+        contact_us_main_text_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div[1]/h4'
+        return self.wait_for((By.XPATH, contact_us_main_text_xpath))
+
+    def assert_How_shipment_works_description_text(self):
+        how_shipment_text_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[5]/li[1]'
+        return self.wait_for((By.XPATH, how_shipment_text_xpath))
+
+    def Navigate_to_more_details(self):
+        more_details_button_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[5]/div/a'
+        self.wait_for((By.XPATH, more_details_button_xpath)).click()
+
+    def assert_Navigate_to_more_details(self):
+        message_in_page_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[1]/div/p[1]'
+        return self.wait_for((By.XPATH, message_in_page_xpath))
+

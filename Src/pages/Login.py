@@ -1,5 +1,4 @@
 from selenium.webdriver.common.by import By
-from selenium import webdriver
 from common import CommonOps
 from Src.Utils.getUserKeyCode import find_db_login_key
 class Login(CommonOps):
@@ -8,8 +7,8 @@ class Login(CommonOps):
         self.driver = driver
 
     def move_to_login(self):
-        move_button_selector = '//*[@id="root"]/div/div[2]/header/div/div/a[1]'
-        return self.wait_for((By.XPATH, move_button_selector)).click()
+        move_button_xpath = '//*[@id="root"]/div/div[2]/header/div/div/a[1]'
+        return self.wait_for((By.XPATH, move_button_xpath)).click()
 
     def login(self, number):
         phone_input = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[1]/span/input'
