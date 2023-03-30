@@ -97,4 +97,60 @@ class Product(CommonOps):
         product_card_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[3]/a[1]/div'
         return self.wait_for((By.XPATH, product_card_xpath))
 
+    def upload_product(self):
+        upload_new_product_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[1]/div/div/div[2]/a[5]/span'
+        self.wait_for((By.XPATH, upload_new_product_xpath)).click()
+
+        cop_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[1]/div[1]/div[1]/span/input'
+        buissness_name_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[1]/div[1]/div[2]/span/input'
+        phone_number_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[2]/div[1]/div[1]/span/input'
+        mail_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[2]/div[1]/div[2]/span/input'
+        buissness_url_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[3]/div[1]/div[1]/span/input'
+        town_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[3]/div[1]/div[2]/span/input'
+        street_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[4]/div[1]/div[1]/span/input'
+        building_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[2]/div[4]/div[1]/div[2]/span/input'
+        add_button = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/input'
+
+        self.wait_for((By.XPATH, cop_xpath)).send_keys('3')
+        self.wait_for((By.XPATH, buissness_name_xpath)).send_keys('IQA')
+        self.wait_for((By.XPATH, phone_number_xpath)).send_keys('0556961922')
+        self.wait_for((By.XPATH, mail_xpath)).send_keys('moshe@IQA.com')
+        self.wait_for((By.XPATH, buissness_url_xpath)).send_keys('www.IQA.com')
+        self.wait_for((By.XPATH, town_xpath)).send_keys('tel-aviv')
+        self.wait_for((By.XPATH, street_xpath)).send_keys('rothschild')
+        self.wait_for((By.XPATH, building_xpath)).send_keys('5')
+        self.wait_for((By.XPATH, add_button)).click()
+
+    def assert_upload_product(self):
+        error_message_xpath = '/html/body/div/div/div[4]/div/div/div/div[2]/div[3]/form/div[3]'
+        return self.wait_for((By.XPATH, error_message_xpath))
+
+    def assert_product_title(self):
+        title_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[2]/div[1]/h1'
+        return self.wait_for((By.XPATH, title_xpath))
+
+    def assert_product_carton(self):
+        container_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[2]/div[3]/div/div[2]/span'
+        return self.wait_for((By.XPATH, container_xpath))
+
+    def assert_cost_per_carton(self):
+        container_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[2]/div[3]/div/div[3]'
+        return self.wait_for((By.XPATH, container_xpath))
+
+    def assert_cartons_stock(self):
+        container_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[2]/div[3]/div/div[1]'
+        return self.wait_for((By.XPATH, container_xpath))
+
+    def add_product_to_cart_for_checkout(self):
+        product_add_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[1]/div[1]/div/div/div[2]/div[2]/div/div/span[1]/i'
+        self.wait_for((By.XPATH, product_add_xpath)).click()
+
+    def Empty_cart_button(self):
+        empty_cart_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/div[1]/div[2]'
+        self.wait_for((By.XPATH, empty_cart_xpath)).click()
+
+    def assert_empty_cart(self):
+        price_xpath = '//*[@id="root"]/div/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/div[3]/div/h6[4]/span[2]'
+        return self.wait_for((By.XPATH, price_xpath)).text
+
 
