@@ -77,7 +77,7 @@ def test_4_Checkout_button(test_setup):
 
 @allure.description("valid form delivery details")
 @allure.severity(severity_level="CRITICAL")
-@allure.title("Test case ID: TS41")
+@allure.title("Test case ID: TS37")
 def test_4_Valid_delivery_details(test_setup):
     try:
         driver = test_setup
@@ -95,7 +95,7 @@ def test_4_Valid_delivery_details(test_setup):
         assert not per.assert_valid_delivery_details()
     except Exception as e:
         print(e)
-        driver.save_screenshot("test_TS41_error.png")
+        driver.save_screenshot("test_TS37_error.png")
         raise e
 
 @allure.description("invalid form delivery details")
