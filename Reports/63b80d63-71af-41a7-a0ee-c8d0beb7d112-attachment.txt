@@ -1,0 +1,5 @@
+assert 'https://www.instagram.com/' == 'https://www.twitter.com/'
+  - https://www.twitter.com/
+  ?              ^^^^^
+  + https://www.instagram.com/
+  ?             +++ ^^ ++
