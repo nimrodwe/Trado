@@ -30,5 +30,24 @@ class Register(CommonOps):
         create_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/div/div[3]/button'
         return self.wait_for((By.XPATH, create_button_xpath))
 
+    def Invalid_register(self):
+        phone_input_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[1]/span/input'
+        id = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[2]/span/input'
+        read_checkbox_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[3]/span/span/span/i'
+        login_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/input'
+        first_input_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[1]/span/input'
+        random_phone_number = generate_phone_number()
+        self.wait_for((By.XPATH, phone_input_xpath)).send_keys("0586691039")
+        self.wait_for((By.XPATH, id)).send_keys("4")
+        self.wait_for((By.XPATH, read_checkbox_xpath)).click()
+        self.wait_for((By.XPATH, login_button_xpath)).click()
+        phone_code = find_db_login_key_register(random_phone_number)
+        self.wait_for((By.XPATH, first_input_xpath)).send_keys(phone_code)
+
+    def assert_invalid_register(self):
+        error_message = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[3]'
+        self.wait_for((By.XPATH, error_message))
+
+
 
 
