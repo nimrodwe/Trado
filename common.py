@@ -13,9 +13,6 @@ class CommonOps:
     def wait_for(self, locator):
         return self._wait.until(EC.presence_of_element_located(locator))
 
-    def find(self, locator):
-        return self.driver.find_element(*locator)
-
     def save_welcome_button(self):
         welcome_button = self._wait.until(EC.presence_of_element_located(self.welcome_button))
         welcome_button.click()
