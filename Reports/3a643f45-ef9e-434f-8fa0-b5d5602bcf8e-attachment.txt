@@ -1,0 +1,5 @@
+assert 'https://qa.t...product/04991' == 'https://qa.t...co.il/contact'
+  - https://qa.trado.co.il/contact
+  ?                        ^ ^^^
+  + https://qa.trado.co.il/product/04991
+  ?                        ^^ ^^  ++++++

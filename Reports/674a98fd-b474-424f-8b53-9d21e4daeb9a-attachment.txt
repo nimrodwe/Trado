@@ -1,0 +1,4 @@
+15417
+assert not <selenium.webdriver.remote.webelement.WebElement (session="475f473bf03e214d6c91c01d0595323a", element="b37f8ebe-1b99-4eb3-a275-937076606d53")>
+ +  where <selenium.webdriver.remote.webelement.WebElement (session="475f473bf03e214d6c91c01d0595323a", element="b37f8ebe-1b99-4eb3-a275-937076606d53")> = <bound method Product.assert_upload_product of <Src.pages.Product.Product object at 0x000001699F7E90D0>>()
+ +    where <bound method Product.assert_upload_product of <Src.pages.Product.Product object at 0x000001699F7E90D0>> = <Src.pages.Product.Product object at 0x000001699F7E90D0>.assert_upload_product

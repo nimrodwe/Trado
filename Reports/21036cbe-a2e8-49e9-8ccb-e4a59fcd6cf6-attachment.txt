@@ -1,4 +1,0 @@
-12320
-assert not <selenium.webdriver.remote.webelement.WebElement (session="0fe27965ac3dde5023acf8394837d2d2", element="7c1dde7f-26ce-410b-8cac-70bb2e96eae7")>
- +  where <selenium.webdriver.remote.webelement.WebElement (session="0fe27965ac3dde5023acf8394837d2d2", element="7c1dde7f-26ce-410b-8cac-70bb2e96eae7")> = <bound method Product.assert_upload_product of <Src.pages.Product.Product object at 0x00000235569E2C90>>()
- +    where <bound method Product.assert_upload_product of <Src.pages.Product.Product object at 0x00000235569E2C90>> = <Src.pages.Product.Product object at 0x00000235569E2C90>.assert_upload_product
