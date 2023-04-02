@@ -1,0 +1,3 @@
+assert None
+ +  where None = <bound method Search.assert_search_product_by_input of <Src.pages.Search.Search object at 0x0000023556985BD0>>()
+ +    where <bound method Search.assert_search_product_by_input of <Src.pages.Search.Search object at 0x0000023556985BD0>> = <Src.pages.Search.Search object at 0x0000023556985BD0>.assert_search_product_by_input
