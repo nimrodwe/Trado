@@ -1,0 +1,26 @@
+Message: 
+Stacktrace:
+Backtrace:
+	(No symbol) [0x0073DCE3]
+	(No symbol) [0x006D39D1]
+	(No symbol) [0x005E4DA8]
+	(No symbol) [0x0061019F]
+	(No symbol) [0x006103AB]
+	(No symbol) [0x0063EE62]
+	(No symbol) [0x0062AF14]
+	(No symbol) [0x0063D57C]
+	(No symbol) [0x0062ACC6]
+	(No symbol) [0x00606F68]
+	(No symbol) [0x006080CD]
+	GetHandleVerifier [0x009B3832+2506274]
+	GetHandleVerifier [0x009E9794+2727300]
+	GetHandleVerifier [0x009EE36C+2746716]
+	GetHandleVerifier [0x007E6690+617600]
+	(No symbol) [0x006DC712]
+	(No symbol) [0x006E1FF8]
+	(No symbol) [0x006E20DB]
+	(No symbol) [0x006EC63B]
+	BaseThreadInitThunk [0x76157D69+25]
+	RtlInitializeExceptionChain [0x774DB74B+107]
+	RtlClearBits [0x774DB6CF+191]
+

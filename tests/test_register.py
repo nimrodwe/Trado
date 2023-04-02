@@ -23,7 +23,7 @@ def test_1_valid_register(test_setup):
         raise e
 
 @allure.description("register with already registered account (N)")
-@allure.severity(severity_level="NORMAL")
+@allure.severity(severity_level="HIGH")
 @allure.title("Test case ID: TS22")
 def test_2_invalid_register(test_setup):
     try:

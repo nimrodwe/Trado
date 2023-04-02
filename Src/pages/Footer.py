@@ -48,7 +48,7 @@ class Footer(CommonOps):
         self.driver.switch_to.window(self.driver.window_handles[1])
 
     def who_we_are_link(self):
-        who_we_are_link_xpath = '//*[@id="root"]/div/div[2]/div[3]/div/div[1]/a[1]'
+        who_we_are_link_xpath = '/html/body/div/div/div[2]/div[3]/div/div[1]/a[1]'
         element = self.wait_for((By.XPATH, who_we_are_link_xpath))
         element.click()
         self.driver.switch_to.window(self.driver.window_handles[1])

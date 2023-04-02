@@ -18,6 +18,7 @@ class Register(CommonOps):
         read_checkbox_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[3]/span/span/span/i'
         login_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/input'
         first_input_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[1]/div[1]/span/input'
+        verify_secret_code_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/input'
         random_phone_number = generate_phone_number()
         self.wait_for((By.XPATH, phone_input_xpath)).send_keys(random_phone_number)
         self.wait_for((By.XPATH, id)).send_keys("4")
@@ -25,6 +26,7 @@ class Register(CommonOps):
         self.wait_for((By.XPATH, login_button_xpath)).click()
         phone_code = find_db_login_key_register(random_phone_number)
         self.wait_for((By.XPATH, first_input_xpath)).send_keys(phone_code)
+        self.wait_for((By.XPATH, verify_secret_code_button_xpath)).click()
 
     def assert_register(self):
         create_button_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/div/div[3]/button'
