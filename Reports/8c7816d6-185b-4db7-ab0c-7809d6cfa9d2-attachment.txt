@@ -1,1 +1,0 @@
-'Product' object has no attribute 'product_filter_low_to_high'
