@@ -1,0 +1,32 @@
+Message: unknown error: cannot determine loading status
+from no such window
+  (Session info: chrome=111.0.5563.65)
+Stacktrace:
+Backtrace:
+	(No symbol) [0x0073DCE3]
+	(No symbol) [0x006D39D1]
+	(No symbol) [0x005E4C70]
+	(No symbol) [0x005D8481]
+	(No symbol) [0x005D6E08]
+	(No symbol) [0x005D747A]
+	(No symbol) [0x005DFF62]
+	(No symbol) [0x005EA348]
+	(No symbol) [0x005ECD46]
+	(No symbol) [0x005D77D3]
+	(No symbol) [0x005EA055]
+	(No symbol) [0x0063D4D7]
+	(No symbol) [0x0062ACC6]
+	(No symbol) [0x00606F68]
+	(No symbol) [0x006080CD]
+	GetHandleVerifier [0x009B3832+2506274]
+	GetHandleVerifier [0x009E9794+2727300]
+	GetHandleVerifier [0x009EE36C+2746716]
+	GetHandleVerifier [0x007E6690+617600]
+	(No symbol) [0x006DC712]
+	(No symbol) [0x006E1FF8]
+	(No symbol) [0x006E20DB]
+	(No symbol) [0x006EC63B]
+	BaseThreadInitThunk [0x76157D69+25]
+	RtlInitializeExceptionChain [0x774DB74B+107]
+	RtlClearBits [0x774DB6CF+191]
+
