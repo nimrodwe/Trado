@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from Src.pages.HomePage import HomePage
 from Src.pages.Product import Product
 from Src.pages.Login import Login
@@ -200,6 +202,10 @@ def test_11_empty_cart_button(test_setup):
     except Exception as e:
         print(e)
         driver.save_screenshot("test_TS18_error.png")
+
+# Run all the test functions in the file
+if __name__ == "__main__":
+    pytest.main(['-s', '-v', 'test_product.py'])
 
 
 

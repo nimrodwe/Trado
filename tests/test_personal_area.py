@@ -104,3 +104,7 @@ def test_4_Valid_delivery_details(test_setup):
 @allure.title("Test case ID: TS42")
 def test_4_Invalid_delivery_details(test_setup):
     print("test skipped")
+
+# Run all the test functions in the file
+if __name__ == "__main__":
+    pytest.main(['-s', '-v', 'test_personal_area.py'])
