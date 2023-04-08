@@ -16,3 +16,8 @@ to assess the capabilities of the buyer seeking financial assistance and more. T
 development is innovative and challenging.
 
 Website link = https://qa.trado.co.il/
+
+tools:
+selenium
+allure
+pytest
