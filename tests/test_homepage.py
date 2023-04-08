@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from Src.pages.HomePage import HomePage
 from Src.pages.Login import Login
 
@@ -282,6 +284,10 @@ def test_16_Navigate_to_more_details(test_setup):
         print(e)
         driver.save_screenshot("test_TS17_error.png")
         raise e
+
+# Run all the test functions in the file
+if __name__ == "__main__":
+    pytest.main(['-s', '-v', 'test_homepage.py'])
 
 
 

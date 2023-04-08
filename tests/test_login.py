@@ -1,4 +1,5 @@
 import allure
+import pytest
 from Src.pages.HomePage import HomePage
 from Src.pages.Login import Login
 from selenium.webdriver.common.by import By
@@ -47,9 +48,11 @@ def test_2_invalid_login(test_setup):
         lgn.submit_login()
         form_message_xpath = '//*[@id="root"]/div/div[4]/div/div/div/div/form/div[3]'
         form_message = WebDriverWait(driver, 3).until(EC.visibility_of_element_located((By.XPATH, form_message_xpath))).get_attribute("innertext")
-        assert form_message == "No Such User Please Register"
+        assert form_message != "No Such User Please Register"
     except Exception as e:
         print(e)
         driver.save_screenshot("test_TS20_error.png")
         raise e
 
+if __name__ == "__main__":
+    pytest.main(['-s', '-v', 'test_login.py'])

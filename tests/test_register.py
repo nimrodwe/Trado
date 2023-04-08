@@ -1,4 +1,6 @@
 import allure
+import pytest
+
 from Src.pages.HomePage import HomePage
 from Src.pages.Login import Login
 from Src.pages.Register import Register
@@ -40,4 +42,8 @@ def test_2_invalid_register(test_setup):
         print(e)
         driver.save_screenshot("test_TS22_error.png")
         raise e
+
+# Run all the test functions in the file
+if __name__ == "__main__":
+    pytest.main(['-s', '-v', 'test_register.py'])
 
